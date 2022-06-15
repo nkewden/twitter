@@ -1,8 +1,18 @@
-import * as React from "react"
-import TweetInput from "./TweetInput"
-import "./TweetBox.css"
+import * as React from "react";
+import TweetInput from "./TweetInput";
+import "./TweetBox.css";
 
 export default function TweetBox(props) {
+  function handleOnSubmit() {
+    const newTweet = {
+      name: props.userProfiles.name,
+      handle: props.userProfiles.handle,
+      text: "",
+      comments: 0,
+      retweets: 0,
+      likes: 0,
+      id: props.tweets.length}
+    }
   return (
     <div className="tweet-box">
       <TweetInput />
@@ -13,7 +23,7 @@ export default function TweetBox(props) {
         <TweetSubmitButton />
       </div>
     </div>
-  )
+  );
 }
 
 export function TweetBoxIcons() {
@@ -24,19 +34,19 @@ export function TweetBoxIcons() {
       <i className="far fa-chart-bar"></i>
       <i className="fas fa-map-marker-alt"></i>
     </div>
-  )
+  );
 }
 
 export function TweetCharacterCount(props) {
   // ADD CODE HERE
-  return <span></span>
+  return <span></span>;
 }
 
 export function TweetSubmitButton() {
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
-      <button className="tweet-submit-button">Tweet</button>
+      <button className="tweet-submit-button" >Tweet</button>
     </div>
-  )
+  );
 }
